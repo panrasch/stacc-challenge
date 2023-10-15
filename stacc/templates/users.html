@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+</head>
+<body>
+    <h1>User List</h1>
+    <ul>
+        {% for user in users %}
+        <li>
+            <strong>Username:</strong> {{ user.username }}<br>
+            <strong>Email:</strong> {{ user.email }}<br>
+            <strong>Registration Date:</strong> {{ user.date_registered.strftime('%Y-%m-%d %H:%M:%S') }}
+            <strong>User ID:</strong> {{ user.user_id }}<br>
+            <strong>Password hash:</strong> {{ user.password_hash }}<br>
+            <a href="{{ url_for('delete', id=user.user_id) }}" class="btn btn-danger">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

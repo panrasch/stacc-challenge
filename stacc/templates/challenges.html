@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge List</title>
+</head>
+<body>
+    <h1>Challenge List</h1>
+    <ul>
+        {% for challenge in challenges %}
+        <li>
+            <strong>Name:</strong> {{ challenge.name }}<br>
+            <strong>Type:</strong> {{ challenge.challenge_type }}<br>
+            <strong>Description:</strong> {{ challenge.description }}<br>
+            <strong>Reward:</strong> {{ challenge.reward }}<br>
+            <strong>Start Date:</strong> {{ challenge.start_date }}<br>
+            <strong>End Date:</strong> {{ challenge.end_date }}<br>
+            <strong>User:</strong> {{ challenge.user.username }}<br>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
